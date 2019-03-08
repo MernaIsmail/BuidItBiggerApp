@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -34,8 +33,19 @@ public class MainActivityFragment extends Fragment {
         jokesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+//                complete step 1
 //                Toast.makeText(getContext(), myJoker.getJoke(), Toast.LENGTH_LONG).show();
-                launchLibraryActivity(myJoker.getJoke());
+//                complete step 2
+//                launchLibraryActivity.(myJoker.getJoke());
+//                complete step 3
+                new EndpointsAsyncTask() {
+                    @Override
+                    protected void onPostExecute(String result) {
+                        super.onPostExecute(result);
+                        launchLibraryActivity(result);
+                    }
+                }.execute();
+
             }
         });
         // Create an ad request. Check logcat output for the hashed device ID to
