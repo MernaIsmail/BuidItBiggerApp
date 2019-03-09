@@ -8,8 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.udacity.gradle.builditbigger.R;
-
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -26,6 +24,20 @@ public class MainActivityFragment extends Fragment {
                              Bundle savedInstanceState) {
         TextView textView = new TextView(getActivity());
         textView.setText(R.string.hello_world);
+        Button jokesBtn = root.findViewById(R.id.jokes_button);
+        jokesBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new EndpointsAsyncTask() {
+                    @Override
+                    protected void onPostExecute(String result) {
+                        super.onPostExecute(result);
+                        launchLibraryActivity(result);
+                    }
+                }.execute();
+
+            }
+        });
         return textView;
     }
 

@@ -1,6 +1,5 @@
 package com.udacity.gradle.builditbigger;
 
-import android.support.test.InstrumentationRegistry;
 import android.util.Log;
 
 import org.junit.Test;
@@ -9,7 +8,7 @@ import static org.junit.Assert.assertNotNull;
 
 public class EndpointAsyncTaskTest {
     @Test
-    public void verifyEndPointResponse(){
+    public void verifyEndPointResponse() {
         String response = null;
         EndpointsAsyncTask endpointsAsyncTask = new EndpointsAsyncTask();
         endpointsAsyncTask.execute();

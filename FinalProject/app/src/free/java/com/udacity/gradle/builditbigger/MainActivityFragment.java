@@ -29,13 +29,13 @@ public class MainActivityFragment extends Fragment {
 
         AdView mAdView = (AdView) root.findViewById(R.id.adView);
         Button jokesBtn = root.findViewById(R.id.jokes_button);
-        final Joker myJoker = new Joker();
         jokesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 //                complete step 1
 //                Toast.makeText(getContext(), myJoker.getJoke(), Toast.LENGTH_LONG).show();
 //                complete step 2
+//                Joker myJoker = new Joker();
 //                launchLibraryActivity.(myJoker.getJoke());
 //                complete step 3
                 new EndpointsAsyncTask() {
